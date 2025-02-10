@@ -149,4 +149,5 @@ int add(int tal1, int tal2) {
 
 void println(string str) {
     cout << str << "\n";
+    return;
 }

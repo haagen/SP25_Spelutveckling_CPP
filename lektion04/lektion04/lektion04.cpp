@@ -1,6 +1,9 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
+#include <map>
+#include <set>
 
 using namespace std;
 
@@ -49,7 +52,7 @@ void vector_examples() {
     
 }
 
-void iterator_example() {
+void iterator_examples() {
 
     vector<string> my_vector = { "Johan", "Martin", "Pelle", "Felippa" };
 
@@ -93,6 +96,72 @@ void iterator_example() {
     
 }
 
+void list_examples() {
+    
+    list<double> lista = { 1.81, 1.83, 1.69, 1.68, 1.60, 1.83 };
+
+    double total_length = 0;
+    for (double l: lista) {
+        total_length += l;
+    }
+
+    cout << "The average lenght is: " << (total_length / lista.size()) << "\n";
+
+    lista.sort();
+    auto it = lista.begin();
+    cout << "The shortest person in the list: " << *it << "\n";
+    it = lista.end(); --it;
+    //lista.reverse(); it = lista.begin();
+    cout << "The tallest person in the list: " << *it << "\n";
+    
+}
+
+void map_examples() {
+    map<int, string> country_code_to_name;
+
+    country_code_to_name[46] = "Sverige";
+    country_code_to_name[45] = "Danmark";
+    country_code_to_name[39] = "Italien";
+    
+    int country_code;
+    cout << "What is your country code? ";
+    cin >> country_code;
+
+    if (country_code_to_name.count(country_code) == 0) {
+        cout << "We don't know that country code!\n";
+        cout << "We have these countries:\n";
+        for (auto pair : country_code_to_name) {
+            cout << pair.first << ": " << pair.second << "\n";
+        }
+        return;
+    }
+
+    cout << "Your country is " << country_code_to_name[country_code] << "\n";
+}
+
+void set_examples() {
+    set<string> countries;
+
+    string country;
+    do {
+        cout << "Ange ett land: ";
+        cin >> country;
+        countries.insert(country);
+    } while (country != "0");
+
+    cout << "Countries in out set: \n";
+    for (auto c : countries) {
+        cout << c << "\n";
+    }
+
+    if (countries.count("Danmark") > 0) {
+        cout << "We found Danmark in the set\n";
+    } else {
+        cout << "We could not find Danmark in the set\n";
+    }
+    
+}
+
 int main(int argc, char* argv[])
 {
 
@@ -100,6 +169,9 @@ int main(int argc, char* argv[])
     cout << "1. Array examples\n";
     cout << "2. Vector examples\n";
     cout << "3. Iterator examples\n";
+    cout << "4. List examples\n";
+    cout << "5. Map examples\n";
+    cout << "6. Set examples\n";
 
     cout << "> ";
 
@@ -114,7 +186,16 @@ int main(int argc, char* argv[])
         vector_examples();
         break;
     case '3':
-        iterator_example();
+        iterator_examples();
+        break;
+    case '4':
+        list_examples();
+        break;
+    case '5':
+        map_examples();
+        break;
+    case '6':
+        set_examples();
         break;
     }
     

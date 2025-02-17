@@ -101,8 +101,8 @@ void list_examples() {
     list<double> lista = { 1.81, 1.83, 1.69, 1.68, 1.60, 1.83 };
 
     double total_length = 0;
-    for (double l: lista) {
-        total_length += l;
+    for (double length: lista) {
+        total_length += length;
     }
 
     cout << "The average lenght is: " << (total_length / lista.size()) << "\n";

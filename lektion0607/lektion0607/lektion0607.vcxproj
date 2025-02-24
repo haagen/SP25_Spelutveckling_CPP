@@ -154,11 +154,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animal.cpp" />
+    <ClCompile Include="cat.cpp" />
+    <ClCompile Include="child.cpp" />
     <ClCompile Include="dog.cpp" />
     <ClCompile Include="lektion0607.cpp" />
+    <ClCompile Include="parent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animal.h" />
+    <ClInclude Include="cat.h" />
+    <ClInclude Include="child.h" />
     <ClInclude Include="dog.h" />
+    <ClInclude Include="parent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

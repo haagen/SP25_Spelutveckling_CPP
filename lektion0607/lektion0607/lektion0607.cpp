@@ -1,6 +1,11 @@
 
 #include <iostream>
+
+#include "animal.h"
+#include "cat.h"
+#include "child.h"
 #include "dog.h"
+#include "parent.h"
 
 using namespace std;
 
@@ -114,11 +119,51 @@ void basic_oop() {
     
 }
 
+void arv() {
+
+    parent p(1);
+    child c(2, 3);
+
+    cout << "p.x: " << p.x << "\n";
+    cout << "c.x: " << c.x << " c.y: " << c.y << "\n";
+
+    p.my_method();
+    c.my_method();
+
+    cout << "p.x: " << p.x << "\n";
+    cout << "c.x: " << c.x << " c.y: " << c.y << "\n";
+}
+
+string get_animal_name(animal a) {
+    return a.get_name();
+}
+
+
+void animals() {
+    animal a("Loppan", 'F');
+    a.set_age(1);
+    a.info();
+
+    cat c("Astrid", 'H');
+    c.info();
+    c.mjau();
+
+    cout << "The animals name: " << get_animal_name(a) << "\n";
+    cout << "The cats name: " << get_animal_name(c) << "\n";
+    
+}
+
+
+void advanced_oop() {
+    //arv();
+    animals();
+}
 
 int main(int argc, char* argv[])
 {
 
-    basic_oop();
+    //basic_oop();
+    advanced_oop();
     
     return 0;
 }
